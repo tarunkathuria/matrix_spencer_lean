@@ -1,0 +1,30 @@
+MatrixSpencer.matrix_spencer_rectangular : MatrixSpencer.rectangularStatement
+def MatrixSpencerVerification.ExpectedRectangularStatement : Prop :=
+∃ C,
+  0 < C ∧
+    ∀ (n d : ℕ),
+      1 ≤ n →
+        n ≤ d →
+          ∀ (B : Fin n → Matrix (Fin d) (Fin d) ℂ),
+            (∀ (i : Fin n), (B i).IsHermitian) →
+              (∀ (i : Fin n), ‖Matrix.toEuclideanCLM (B i)‖ ≤ 1) →
+                ∃ ε,
+                  (∀ (i : Fin n), ε i = 1 ∨ ε i = -1) ∧
+                    ‖Matrix.toEuclideanCLM (∑ i, ↑(ε i) • B i)‖ ≤ C * √(↑n * Real.log (2 * ↑d / ↑n))
+def MatrixSpencer.rectangularStatement : Prop :=
+∃ C, 0 < C ∧ MatrixSpencer.rectangularStatementWithConstant C
+def MatrixSpencer.rectangularStatementWithConstant : ℝ → Prop :=
+fun C =>
+  ∀ (n d : ℕ),
+    1 ≤ n →
+      n ≤ d →
+        ∀ (B : Fin n → MatrixSpencer.CMatrix d),
+          (∀ (i : Fin n), Matrix.IsHermitian (B i)) →
+            (∀ (i : Fin n), MatrixSpencer.spectralNorm (B i) ≤ 1) →
+              ∃ ε,
+                MatrixSpencer.IsFullSigning ε ∧
+                  MatrixSpencer.spectralNorm (MatrixSpencer.signedSum B ε) ≤
+                    C * √(↑n * MatrixSpencer.rectangularLog n d)
+RECTANGULAR_ORIGINAL_AXIOMS_BEGIN
+'MatrixSpencer.matrix_spencer_rectangular' depends on axioms: [propext, Classical.choice, Quot.sound]
+RECTANGULAR_ORIGINAL_AXIOMS_END

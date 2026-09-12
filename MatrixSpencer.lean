@@ -1,3 +1,5 @@
 import MatrixSpencer.RectangularMain
+import MatrixSpencer.DyadicManuscriptAnalyticAlgorithm
+import MatrixSpencer.DyadicOwnerSDP
 
-/-! Standalone entry point for MatrixSpencer.matrix_spencer_rectangular. -/
+/-! Standalone entry for the preserved theorem and all principal current route endpoints. -/

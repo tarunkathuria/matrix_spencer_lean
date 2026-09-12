@@ -1,0 +1,4 @@
+'MSPrimitiveAudit.square_return' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MSPrimitiveAudit.square_success' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MSPrimitiveAudit.rectangular_return' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MSPrimitiveAudit.rectangular_success' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -13,37 +13,7 @@ The explicit constant is **6,796,548**. Every norm in the target is the Euclidea
 - Final theorem: `MatrixSpencer.matrix_spencer_rectangular`.
 - Main proof: [MatrixSpencer/RectangularMain.lean](MatrixSpencer/RectangularMain.lean).
 - Target definition: [MatrixSpencer/RectangularStatement.lean](MatrixSpencer/RectangularStatement.lean).
-- `MatrixSpencer.lean` imports the original main theorem, the finite analytic sampler endpoint, and the exact dyadic owner SDP.
-
-## Finite analytic sampler extension, September 11
-
-[`DyadicManuscriptAnalyticAlgorithm`](MatrixSpencer/DyadicManuscriptAnalyticAlgorithm.lean) additionally proves correctness and success probability for the actual finite analytic-transition sampler on the original Hermitian contraction inputs. Every returned output is a full signing with the same bound `6,796,548 sqrt(n log(2m/n))`.
-
-Its failure probability is at most `(n+1) K(n,m) 2^(-r)`, where `r` is the local retry count and `K(n,m)` is the explicit phase epoch count in `RectangularEpochParameters.count (RectangularTunedParameters.coefficient n m)`. The stated arithmetic retry count gives success at least `1/2`. Analytic response and support-mesh existence inputs are discharged internally.
-
-The sampler still selects preparation and support meshes using qualitative analytic lemmas, samples exact spectral data, and tests an exact acceptance score. Its finite output probability is formalized; an implemented numerical walk with uniform polynomial tolerances, iteration bounds, and total real-RAM runtime remains future work. See [ANALYTIC_SAMPLER.md](ANALYTIC_SAMPLER.md) and [the precise sampler scope](MS_RECTANGULAR_ANALYTIC_SAMPLER_PROOF.md).
-
-Verify this endpoint separately from the retained existence theorem:
-
-```sh
-python3 check_ms_rectangular_analytic.py
-```
-
-The existing sampler receipt checks its complete **207-module** local closure. Together with the original main theorem, this earlier sampler used **209 local proof modules**. The current entry additionally imports the dyadic SDP extension. Earlier manifests and receipts retain their original scope.
-
-## Exact dyadic SDP extension, September 11
-
-[`DyadicOwnerSDP.exists_maximizer`](MatrixSpencer/DyadicOwnerSDP.lean) proves that an explicit affine real SDP attains exactly the existing rectangular dyadic owner potential. This includes singular densities in the feasible set, singular or zero covariance, unrestricted complex fidelity witnesses, and the manuscript's actual tuned dyadic exponent and weight.
-
-In physical dimension `d` and dyadic depth `m`, the actual program has `(m+3)d²−1` real variables and `2m+1` real matrix inequalities of order `4d`. Lean proves fixed-degree polynomial bounds for the manuscript's chosen depth, including the signed lift. See [the exact formulation and theorem map](RECTANGULAR_DYADIC_SDP_20260911.md). This is a representation-size result; rectangular numerical walk tolerance, iteration-count, and total runtime bounds remain deferred.
-
-The cumulative snapshot contains **283 local proof modules plus the entry wrapper**. Verify every shipped source, including the current entry, old sampler, and new SDP:
-
-```sh
-python3 tools/verify_current_snapshot.py
-```
-
-The manifest is `CURRENT_SNAPSHOT_MANIFEST_20260911.json`; the successful fresh receipt is `CURRENT_SNAPSHOT_VERIFICATION_20260911.json`. It verifies the retained primitive statement probes through their fingerprinted successful receipt, all source hashes, and a fresh replay of every shipped local declaration from an environment containing external imports only. The retained SDP/analytic/original-theorem statement checks are in `provenance/pre_alias_sync_20260911/`. This uses the installed Lean kernel.
+- `MatrixSpencer.lean` imports this repository's selected main theorem.
 
 ## Compile and verify
 
@@ -76,11 +46,11 @@ Replay uses the same installed Lean kernel against imported environments. It doe
 
 ## What is formalized
 
-The dyadic Tsallis finite walk/epoch existence proof, the later finite analytic sampler with actual returned-output success probability, and the exact polynomial-size owner SDP are formalized. Neither that analytic sampler nor the current rectangular manuscript supplies total polynomial runtime for a numerical implementation. Polynomial walk-parameter bounds and total runtime accounting are not claimed by this repository.
+The dyadic Tsallis finite walk/epoch existence proof is formalized. Neither this Lean development nor the current rectangular manuscript claims a polynomial runtime bound.
 
 ## What must be included in this repository
 
-Keep **every file in this directory's source distribution**, including all of `MatrixSpencer/`, `MatrixSpencer.lean`, `tools/`, the Python checker(s), both shell scripts, the toolchain/configuration/lock files, and this README. The **194 original Lean proof modules** form the complete transitive local import closure of `MatrixSpencer.RectangularMain`. The current source distribution also includes the complete later analytic-sampler closure, giving **283 local proof modules** with the dyadic SDP extension and its copied shared dependencies. No sibling proof repository or original workspace is required.
+Keep **every file in this directory's source distribution**, including all of `MatrixSpencer/`, `MatrixSpencer.lean`, `tools/`, the Python checker(s), both shell scripts, the toolchain/configuration/lock files, and this README. There are **194 original Lean proof modules**, constituting the complete transitive local import closure of `MatrixSpencer.RectangularMain`. No sibling proof repository or original workspace is required.
 
 Some foundational Lean modules are shared between the four proof routes. They are intentionally duplicated here. A filename referring to another route can occur through a shared import; it must not be deleted on that basis. This repository does not import another route's final main theorem. The module namespace remains `MatrixSpencer` in the Kadison-Singer repositories because the foundations were developed under that namespace.
 

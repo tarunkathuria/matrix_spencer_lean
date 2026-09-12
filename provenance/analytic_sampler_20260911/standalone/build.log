@@ -1,0 +1,416 @@
+✔ [7351/7557] Built MatrixSpencer.FiniteSelection (12s)
+✔ [7352/7557] Built MatrixSpencer.Statement (16s)
+✔ [7353/7557] Built MatrixSpencer.SecondDerivativeConcavity (16s)
+⚠ [7354/7557] Built MatrixSpencer.EpochMesh (17s)
+warning: MatrixSpencer/EpochMesh.lean:34:62: unused variable `hm`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [7355/7557] Built MatrixSpencer.ComplexGram (17s)
+✔ [7356/7557] Built MatrixSpencer.PartialColoringIteration (17s)
+✔ [7357/7557] Built MatrixSpencer.ReciprocalPowerKernel (19s)
+✔ [7358/7557] Built MatrixSpencer.TraceGeometry (22s)
+✔ [7359/7557] Built MatrixSpencer.SqrtContinuity (22s)
+✔ [7360/7557] Built MatrixSpencer.MSManuscriptProbability (10s)
+✔ [7361/7557] Built MatrixSpencer.RectangularParameters (18s)
+✔ [7362/7557] Built MatrixSpencer.RectangularStatement (6.9s)
+✔ [7363/7557] Built MatrixSpencer.SqrtCompression (24s)
+✔ [7364/7557] Built MatrixSpencer.ThresholdRounding (7.0s)
+✔ [7365/7557] Built MatrixSpencer.MSManuscriptAdaptive (21s)
+✔ [7366/7557] Built MatrixSpencer.Realignment (6.7s)
+✔ [7367/7557] Built MatrixSpencer.MSManuscriptRetryBudget (7.2s)
+✔ [7368/7557] Built MatrixSpencer.Sylvester (11s)
+✔ [7369/7557] Built MatrixSpencer.TransportVariational (11s)
+✔ [7370/7557] Built MatrixSpencer.CompactTaylor (36s)
+✔ [7371/7557] Built MatrixSpencer.TensorContraction (8.7s)
+✔ [7372/7557] Built MatrixSpencer.MSManuscriptSamplerTools (12s)
+✔ [7373/7557] Built MatrixSpencer.MSManuscriptBoundedProcess (13s)
+✔ [7374/7557] Built MatrixSpencer.DensityDomain (10s)
+✔ [7375/7557] Built MatrixSpencer.SuperoperatorCoordinates (6.9s)
+✔ [7376/7557] Built MatrixSpencer.KrausContraction (12s)
+✔ [7377/7557] Built MatrixSpencer.WeightedKraus (13s)
+✔ [7378/7557] Built MatrixSpencer.QuadraticOrder (4.9s)
+✔ [7379/7557] Built MatrixSpencer.TensorOperator (6.1s)
+✔ [7380/7557] Built MatrixSpencer.SpectralCutoff (7.9s)
+✔ [7381/7557] Built MatrixSpencer.ComplexInverseComparison (7.6s)
+✔ [7382/7557] Built MatrixSpencer.MSManuscriptFullProcess (11s)
+✔ [7383/7557] Built MatrixSpencer.FidelityContinuity (12s)
+✔ [7384/7557] Built MatrixSpencer.JordanFrame (9.8s)
+✔ [7385/7557] Built MatrixSpencer.TraceSqrtConcavity (15s)
+✔ [7386/7557] Built MatrixSpencer.SpectralLowForcing (5.4s)
+✔ [7387/7557] Built MatrixSpencer.FidelityBounds (5.6s)
+✔ [7388/7557] Built MatrixSpencer.ProjectionSuper (7.1s)
+✔ [7389/7557] Built MatrixSpencer.DensityPotential (5.7s)
+✔ [7390/7557] Built MatrixSpencer.SqrtDerivative (27s)
+✔ [7391/7557] Built MatrixSpencer.FidelityCompression (13s)
+✔ [7392/7557] Built MatrixSpencer.KrausCoordinateEnergy (10s)
+✔ [7393/7557] Built MatrixSpencer.SpectralDensity (12s)
+✔ [7394/7557] Built MatrixSpencer.CovarianceSource (13s)
+✔ [7395/7557] Built MatrixSpencer.DyadicRoot (14s)
+✔ [7396/7557] Built MatrixSpencer.KrausSupport (19s)
+✔ [7397/7557] Built MatrixSpencer.CovarianceBounds (7.7s)
+✔ [7398/7557] Built MatrixSpencer.OwnerShort (61s)
+✔ [7399/7557] Built MatrixSpencer.DensityFaithfulness (23s)
+✔ [7400/7557] Built MatrixSpencer.DyadicTraceBounds (9.0s)
+✔ [7401/7557] Built MatrixSpencer.DyadicTraceInterpolation (12s)
+✔ [7402/7557] Built MatrixSpencer.SpectralHighForcing (17s)
+✔ [7403/7557] Built MatrixSpencer.OwnerPotential (5.0s)
+✔ [7404/7557] Built MatrixSpencer.SupportShaving (7.6s)
+✔ [7405/7557] Built MatrixSpencer.BalancedTransport (17s)
+✔ [7406/7557] Built MatrixSpencer.HighFrameBudget (5.2s)
+✔ [7407/7557] Built MatrixSpencer.TsallisHessian (32s)
+✔ [7408/7557] Built MatrixSpencer.OwnerBounds (5.9s)
+✔ [7409/7557] Built MatrixSpencer.CovariancePreparation (8.9s)
+✔ [7410/7557] Built MatrixSpencer.InverseComparison (9.2s)
+✔ [7411/7557] Built MatrixSpencer.BalancedBudgets (9.3s)
+✔ [7412/7557] Built MatrixSpencer.RealCovarianceDomain (11s)
+✔ [7413/7557] Built MatrixSpencer.HermitianConeConcavity (12s)
+✔ [7414/7557] Built MatrixSpencer.OwnerCertificate (9.7s)
+✔ [7415/7557] Built MatrixSpencer.OwnerPreparation (7.6s)
+✔ [7416/7557] Built MatrixSpencer.CovarianceSampler (7.9s)
+✔ [7417/7557] Built MatrixSpencer.BalancedTsallis (15s)
+✔ [7418/7557] Built MatrixSpencer.SignedLift (12s)
+✔ [7419/7557] Built MatrixSpencer.DyadicRootDerivative (15s)
+✔ [7420/7557] Built MatrixSpencer.RegularizedOwnerPotential (15s)
+✔ [7421/7557] Built MatrixSpencer.FidelityDerivative (19s)
+✔ [7422/7557] Built MatrixSpencer.SquareConclusion (9.1s)
+⚠ [7423/7557] Built MatrixSpencer.CovarianceMovement (9.0s)
+warning: MatrixSpencer/CovarianceMovement.lean:18:0: automatically included section variable(s) unused in theorem `MatrixSpencer.covarianceMovement_lower`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: MatrixSpencer/CovarianceMovement.lean:22:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: MatrixSpencer/CovarianceMovement.lean:36:0: automatically included section variable(s) unused in theorem `MatrixSpencer.covarianceMovement_trace`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: MatrixSpencer/CovarianceMovement.lean:39:0: automatically included section variable(s) unused in theorem `MatrixSpencer.realTrace_rankOne_mul`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [7424/7557] Built MatrixSpencer.FiniteProcessMoments (10s)
+✔ [7425/7557] Built MatrixSpencer.CovarianceDust (11s)
+✔ [7426/7557] Built MatrixSpencer.MatrixPowerTrace (10s)
+✔ [7427/7557] Built MatrixSpencer.RegularizedOwnerPreparation (7.6s)
+✔ [7428/7557] Built MatrixSpencer.TsallisSuperoperator (12s)
+✔ [7429/7557] Built MatrixSpencer.DyadicRootInverseDerivative (12s)
+⚠ [7430/7557] Built MatrixSpencer.PositiveCovarianceSampler (4.8s)
+warning: MatrixSpencer/PositiveCovarianceSampler.lean:50:2: Try `simp at hn` instead of `simpa using hn`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [7431/7557] Built MatrixSpencer.CovarianceTraceLedger (5.2s)
+warning: MatrixSpencer/CovarianceTraceLedger.lean:23:0: automatically included section variable(s) unused in theorem `MatrixSpencer.covariance_trace_ledger`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [7432/7557] Built MatrixSpencer.FiniteBranchingTermination (5.3s)
+✔ [7433/7557] Built MatrixSpencer.TransportDerivative (13s)
+✔ [7434/7557] Built MatrixSpencer.OwnerSamplerMoments (4.1s)
+✔ [7435/7557] Built MatrixSpencer.DyadicCurvatureCompression (7.0s)
+✔ [7436/7557] Built MatrixSpencer.DyadicTsallisHessian (11s)
+✔ [7437/7557] Built MatrixSpencer.DyadicInverseKernelBound (5.0s)
+✔ [7438/7557] Built MatrixSpencer.DyadicBalancedModel (6.5s)
+✔ [7439/7557] Built MatrixSpencer.GeneralizedSylvester (9.5s)
+✔ [7440/7557] Built MatrixSpencer.DyadicTsallisBounds (4.7s)
+✔ [7441/7557] Built MatrixSpencer.DyadicLowForcing (5.9s)
+✔ [7442/7557] Built MatrixSpencer.DyadicBoundaryGain (8.7s)
+✔ [7443/7557] Built MatrixSpencer.DyadicTsallisConcavity (8.5s)
+✔ [7444/7557] Built MatrixSpencer.FidelityHessian (12s)
+✔ [7445/7557] Built MatrixSpencer.DensityHessian (28s)
+✔ [7446/7557] Built MatrixSpencer.KrausCompressionBridge (9.1s)
+✔ [7447/7557] Built MatrixSpencer.BalancedFreeHessian (12s)
+✔ [7448/7557] Built MatrixSpencer.KrausReducedFamily (5.3s)
+✔ [7449/7557] Built MatrixSpencer.CovarianceSupport (7.3s)
+✔ [7450/7557] Built MatrixSpencer.BalancedSuperoperator (7.1s)
+⚠ [7451/7557] Built MatrixSpencer.CompressedBudgets (6.6s)
+warning: MatrixSpencer/CompressedBudgets.lean:44:0: automatically included section variable(s) unused in theorem `MatrixSpencer.isometry_compression_isHermitian`:
+  [Fintype m]
+  [DecidableEq m]
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype m] [DecidableEq m] [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: MatrixSpencer/CompressedBudgets.lean:81:0: automatically included section variable(s) unused in theorem `MatrixSpencer.covarianceKraus_compressedOriginalFamily`:
+  [Fintype m]
+  [DecidableEq m]
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype m] [DecidableEq m] [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [7452/7557] Built MatrixSpencer.CovarianceFace (5.2s)
+✔ [7453/7557] Built MatrixSpencer.CovarianceFaceDomination (5.7s)
+✔ [7454/7557] Built MatrixSpencer.JordanWhitening (10s)
+⚠ [7455/7557] Built MatrixSpencer.FrameTrace (6.5s)
+warning: MatrixSpencer/FrameTrace.lean:123:0: automatically included section variable(s) unused in theorem `MatrixSpencer.jordanForceFrame_regularizer_pairing`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: MatrixSpencer/FrameTrace.lean:141:0: automatically included section variable(s) unused in theorem `MatrixSpencer.jordanForceFrame_coupling_pairing`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [7456/7557] Built MatrixSpencer.SingularDensityCalculus (27s)
+✔ [7457/7557] Built MatrixSpencer.ObservedCapResponse (6.2s)
+✔ [7458/7557] Built MatrixSpencer.DyadicHighForcing (5.6s)
+✔ [7459/7557] Built MatrixSpencer.DyadicObservedCapResponse (5.9s)
+✔ [7460/7557] Built MatrixSpencer.DyadicDensityCalculus (19s)
+✔ [7461/7557] Built MatrixSpencer.OptimizerResponse (61s)
+✔ [7462/7557] Built MatrixSpencer.DyadicDensityFaithfulness (7.0s)
+✔ [7463/7557] Built MatrixSpencer.FaithfulResponse (8.6s)
+✔ [7464/7557] Built MatrixSpencer.DyadicDensityOptimizer (5.6s)
+✔ [7465/7557] Built MatrixSpencer.DyadicOwnerCertificate (5.7s)
+✔ [7466/7557] Built MatrixSpencer.ObservedResponse (6.1s)
+⚠ [7467/7557] Built MatrixSpencer.CoefficientResponse (12s)
+warning: MatrixSpencer/CoefficientResponse.lean:31:0: automatically included section variable(s) unused in theorem `MatrixSpencer.responseGram_mix`:
+  [Fintype κ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype κ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: MatrixSpencer/CoefficientResponse.lean:64:0: automatically included section variable(s) unused in theorem `MatrixSpencer.covarianceKraus_isHermitian`:
+  [Fintype n]
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype n] [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: MatrixSpencer/CoefficientResponse.lean:81:0: automatically included section variable(s) unused in theorem `MatrixSpencer.coefficientMix_hermitian_coe`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [7468/7557] Built MatrixSpencer.DyadicOptimizerStationarity (30s)
+✔ [7469/7557] Built MatrixSpencer.OptimizerResponseUnrestricted (50s)
+⚠ [7470/7557] Built MatrixSpencer.OwnerResponseGeometry (8.1s)
+warning: MatrixSpencer/OwnerResponseGeometry.lean:92:0: automatically included section variable(s) unused in theorem `MatrixSpencer.ownerCoefficientResponse_quadratic`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [7471/7557] Built MatrixSpencer.OwnerMovementCovariance (7.9s)
+⚠ [7472/7557] Built MatrixSpencer.EpochCoordinateStep (7.9s)
+warning: MatrixSpencer/EpochCoordinateStep.lean:23:8: automatically included section variable(s) unused in theorem `MatrixSpencer.mem_frozenCoordinates`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [7473/7557] Built MatrixSpencer.PhaseEpochProgress (5.9s)
+✔ [7474/7557] Built MatrixSpencer.CovarianceCalculus (30s)
+✔ [7475/7557] Built MatrixSpencer.SingularResponseTransfer (30s)
+✔ [7476/7557] Built MatrixSpencer.DyadicOptimizerResponse (44s)
+✔ [7477/7557] Built MatrixSpencer.CovarianceCompactChart (10s)
+✔ [7478/7557] Built MatrixSpencer.SingularBalancedResponse (16s)
+✔ [7479/7557] Built MatrixSpencer.DyadicPotentialResponse (18s)
+✔ [7480/7557] Built MatrixSpencer.DyadicSingularResponseTransfer (23s)
+✔ [7481/7557] Built MatrixSpencer.CoefficientSupportFrame (17s)
+⚠ [7482/7557] Built MatrixSpencer.DyadicCoefficientResponse (9.8s)
+warning: MatrixSpencer/DyadicCoefficientResponse.lean:103:0: automatically included section variable(s) unused in theorem `MatrixSpencer.dyadicOwnerCoefficientResponse_quadratic`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [7483/7557] Built MatrixSpencer.DyadicSupportedPotentialResponse (9.0s)
+✔ [7484/7557] Built MatrixSpencer.DyadicModelBalancedResponse (10s)
+✔ [7485/7557] Built MatrixSpencer.DyadicCovarianceCalculus (8.4s)
+✔ [7486/7557] Built MatrixSpencer.CovarianceResponse (55s)
+✔ [7487/7557] Built MatrixSpencer.CovarianceGram (8.5s)
+⚠ [7488/7557] Built MatrixSpencer.CovarianceGramFactor (10s)
+warning: MatrixSpencer/CovarianceGramFactor.lean:25:41: This simp argument is unused:
+  Matrix.mul_sum
+
+Hint: Omit it from the simp argument list.
+  simp only [covarianceGram, mixedKraus, M̵a̵t̵r̵i̵x̵.̵m̵u̵l̵_̵s̵u̵m̵,̵ ̵Matrix.sum_mul, Matrix.mul_smul, Matrix.smul_mul,
+  ̲  ̲ ̲ ̲realTrace_sum, realTrace_smul, Matrix.mul_apply, Matrix.transpose_apply, Finset.sum_mul,
+  ̲  ̲ ̲ ̲Finset.mul_sum]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: MatrixSpencer/CovarianceGramFactor.lean:25:57: This simp argument is unused:
+  Matrix.sum_mul
+
+Hint: Omit it from the simp argument list.
+  simp only [covarianceGram, mixedKraus, Matrix.mul_sum, M̵a̵t̵r̵i̵x̵.̵s̵u̵m̵_̵m̵u̵l̵,̵Matrix.mul_smul, Matrix.smul_mul,
+  ̲  ̲ ̲ ̲realTrace_sum, realTrace_smul, Matrix.mul_apply, Matrix.transpose_apply, Finset.sum_mul,
+  ̲  ̲ ̲ ̲Finset.mul_sum]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [7489/7557] Built MatrixSpencer.CompressedGram (6.2s)
+warning: MatrixSpencer/CompressedGram.lean:20:0: automatically included section variable(s) unused in theorem `MatrixSpencer.covarianceGram_krausReducedFamily`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [7490/7557] Built MatrixSpencer.OwnerFrame (7.1s)
+✔ [7491/7557] Built MatrixSpencer.DyadicOwnerFrame (8.0s)
+✔ [7492/7557] Built MatrixSpencer.OwnerCapResponse (7.6s)
+✔ [7493/7557] Built MatrixSpencer.DyadicOwnerCapResponse (10s)
+✔ [7494/7557] Built MatrixSpencer.JointOwnerResponse (44s)
+✔ [7495/7557] Built MatrixSpencer.DyadicCovarianceResponse (47s)
+✔ [7496/7557] Built MatrixSpencer.OwnerShavingDerivative (21s)
+✔ [7497/7557] Built MatrixSpencer.FamilyDeletion (5.7s)
+✔ [7498/7557] Built MatrixSpencer.MatchedOwnerTaylor (13s)
+✔ [7499/7557] Built MatrixSpencer.RegularizedShavingDerivative (6.2s)
+✔ [7500/7557] Built MatrixSpencer.PreparedOwnerResponse (7.5s)
+✔ [7501/7557] Built MatrixSpencer.RegularizedFamilyDeletion (6.8s)
+✔ [7502/7557] Built MatrixSpencer.FixedFaceOwnerTaylor (9.9s)
+✔ [7503/7557] Built MatrixSpencer.OwnerDustPreparation (12s)
+✔ [7504/7557] Built MatrixSpencer.DyadicOwnerFunctions (7.8s)
+✔ [7505/7557] Built MatrixSpencer.DyadicOwnerShavingDerivative (11s)
+✔ [7506/7557] Built MatrixSpencer.FiniteOwnerDrift (12s)
+⚠ [7507/7557] Built MatrixSpencer.EpochState (8.1s)
+warning: MatrixSpencer/EpochState.lean:33:0: automatically included section variable(s) unused in theorem `MatrixSpencer.epochCenter_norm_le`:
+  [DecidableEq ι]
+  [Nonempty n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] [Nonempty n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: MatrixSpencer/EpochState.lean:48:0: automatically included section variable(s) unused in theorem `MatrixSpencer.epochCenter_coe`:
+  [DecidableEq ι]
+  [Nonempty n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] [Nonempty n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: MatrixSpencer/EpochState.lean:56:0: automatically included section variable(s) unused in theorem `MatrixSpencer.epochCenter_add_smul`:
+  [DecidableEq ι]
+  [Nonempty n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] [Nonempty n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [7508/7557] Built MatrixSpencer.DyadicPreparedOwnerResponse (7.7s)
+✔ [7509/7557] Built MatrixSpencer.FixedFaceSampler (9.0s)
+⚠ [7510/7557] Built MatrixSpencer.EpochInitial (9.5s)
+warning: MatrixSpencer/EpochInitial.lean:25:8: `Finset.eq_empty_iff_forall_not_mem` has been deprecated: Use `Finset.eq_empty_iff_forall_notMem` instead
+warning: MatrixSpencer/EpochInitial.lean:23:0: automatically included section variable(s) unused in theorem `MatrixSpencer.frozenCoordinates_start_empty`:
+  [Nonempty n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: MatrixSpencer/EpochInitial.lean:49:22: This simp argument is unused:
+  sub_zero
+
+Hint: Omit it from the simp argument list.
+  simp only [EpochConfig.anchor, ownerCertificateTangent, sub_self, Matrix.mul_zero,
+        realTrace_zero, s̵u̵b̵_̵z̵e̵r̵o̵,̵ ̵abs_zero, le_refl]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [7511/7557] Built MatrixSpencer.FiniteHalfPhase (9.9s)
+✔ [7512/7557] Built MatrixSpencer.EpochSelection (11s)
+✔ [7513/7557] Built MatrixSpencer.DyadicOwnerDustPreparation (10s)
+✔ [7514/7557] Built MatrixSpencer.DyadicJointOwnerResponse (48s)
+✔ [7515/7557] Built MatrixSpencer.OwnerWalkMesh (7.1s)
+✔ [7516/7557] Built MatrixSpencer.RectangularEpochParameters (7.3s)
+✔ [7517/7557] Built MatrixSpencer.PhaseRestriction (8.3s)
+✔ [7518/7557] Built MatrixSpencer.MSManuscriptScore (9.6s)
+✔ [7519/7557] Built MatrixSpencer.MSManuscriptPhaseProgress (14s)
+⚠ [7520/7557] Built MatrixSpencer.OwnerSamplerCertificate (9.0s)
+warning: MatrixSpencer/OwnerSamplerCertificate.lean:20:0: automatically included section variable(s) unused in theorem `MatrixSpencer.ownerCertificate_mixed_difference`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: MatrixSpencer/OwnerSamplerCertificate.lean:88:0: automatically included section variable(s) unused in theorem `MatrixSpencer.ownerCertificate_covariance_payment`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [7521/7557] Built MatrixSpencer.EpochWalkMesh (9.4s)
+✔ [7522/7557] Built MatrixSpencer.DyadicEpochState (9.2s)
+⚠ [7523/7557] Built MatrixSpencer.SigningPotential (7.4s)
+warning: MatrixSpencer/SigningPotential.lean:19:0: automatically included section variable(s) unused in theorem `MatrixSpencer.signingEpsilon_pos`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: MatrixSpencer/SigningPotential.lean:23:0: automatically included section variable(s) unused in theorem `MatrixSpencer.signingEpsilon_le_small`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: MatrixSpencer/SigningPotential.lean:29:0: automatically included section variable(s) unused in theorem `MatrixSpencer.signingEpsilon_count_small`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: MatrixSpencer/SigningPotential.lean:45:0: automatically included section variable(s) unused in theorem `MatrixSpencer.epochCenter_zero_zero`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [7524/7557] Built MatrixSpencer.SmallLiveRounding (7.9s)
+✔ [7525/7557] Built MatrixSpencer.DyadicMatchedOwnerTaylor (14s)
+✔ [7526/7557] Built MatrixSpencer.MSManuscriptPhase (10s)
+✔ [7527/7557] Built MatrixSpencer.SigningExtraction (8.6s)
+✔ [7528/7557] Built MatrixSpencer.DyadicEpochPreparation (9.4s)
+✔ [7529/7557] Built MatrixSpencer.DyadicEpochInitial (9.6s)
+✔ [7530/7557] Built MatrixSpencer.DyadicFixedFaceOwnerTaylor (8.1s)
+✔ [7531/7557] Built MatrixSpencer.EpochUpdate (13s)
+✔ [7532/7557] Built MatrixSpencer.DyadicGlobalResponseBudget (4.7s)
+✔ [7533/7557] Built MatrixSpencer.DyadicEpochUpdate (15s)
+✔ [7534/7557] Built MatrixSpencer.EpochLocalMoments (5.2s)
+✔ [7535/7557] Built MatrixSpencer.DyadicFiniteOwnerDrift (6.9s)
+✔ [7536/7557] Built MatrixSpencer.RectangularTunedParameters (4.2s)
+✔ [7537/7557] Built MatrixSpencer.DyadicEpochLocalMoments (5.1s)
+✔ [7538/7557] Built MatrixSpencer.EpochTree (4.7s)
+✔ [7539/7557] Built MatrixSpencer.DyadicFixedFaceSampler (4.7s)
+⚠ [7540/7557] Built MatrixSpencer.DyadicEpochAnalyticInputs (4.8s)
+warning: MatrixSpencer/DyadicEpochAnalyticInputs.lean:44:0: automatically included section variable(s) unused in theorem `MatrixSpencer.DyadicEpochAnalyticInputs.time_lt_of_active`:
+  [DecidableEq ι]
+  [Nonempty n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] [Nonempty n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [7541/7557] Built MatrixSpencer.DyadicEpochSelection (6.1s)
+✔ [7542/7557] Built MatrixSpencer.PhasePotential (4.5s)
+✔ [7543/7557] Built MatrixSpencer.DyadicOwnerWalkMesh (4.0s)
+✔ [7544/7557] Built MatrixSpencer.DyadicEpochTree (4.7s)
+✔ [7545/7557] Built MatrixSpencer.RectangularSigningPotential (5.1s)
+⚠ [7546/7557] Built MatrixSpencer.ActualHalfPhase (5.9s)
+warning: MatrixSpencer/ActualHalfPhase.lean:22:0: automatically included section variable(s) unused in theorem `MatrixSpencer.cubeRegular_of_full_signs`:
+  [Fintype ι]
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype ι] [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [7547/7557] Built MatrixSpencer.DyadicEpochDriftMesh (4.7s)
+✔ [7548/7557] Built MatrixSpencer.DyadicSmallLiveRounding (4.1s)
+✔ [7549/7557] Built MatrixSpencer.DyadicPhasePotential (4.4s)
+✔ [7550/7557] Built MatrixSpencer.DyadicActualEpoch (3.9s)
+✔ [7551/7557] Built MatrixSpencer.DyadicGlobalEpochInputs (3.9s)
+✔ [7552/7557] Built MatrixSpencer.DyadicManuscriptEpoch (4.5s)
+✔ [7553/7557] Built MatrixSpencer.DyadicHalfPhase (5.5s)
+✔ [7554/7557] Built MatrixSpencer.DyadicManuscriptLiftedEpoch (9.6s)
+✔ [7555/7557] Built MatrixSpencer.DyadicManuscriptHalfPhase (10s)
+✔ [7556/7557] Built MatrixSpencer.DyadicManuscriptFullSigning (7.7s)
+✔ [7557/7557] Built MatrixSpencer.DyadicManuscriptAnalyticAlgorithm (5.0s)
+Build completed successfully (7557 jobs).

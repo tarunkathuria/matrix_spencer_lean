@@ -1,0 +1,342 @@
+'DyadicSDPPrimitiveCheck.real_affine_SDP_maximum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DyadicSDPPrimitiveCheck.exact_real_program_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem MatrixSpencer.DyadicOwnerSDP.exists_maximizer.{u_1, u_2} : ∀ {n : Type u_1} {ι : Type u_2} [inst : Fintype n]
+  [inst_1 : LinearOrder n] [inst_2 : Fintype ι] [inst_3 : DecidableEq ι] (m : ℕ) (a : n) (H : Matrix n n ℂ)
+  (A : ι → Matrix n n ℂ) (hA : ∀ (i : ι), (A i).IsHermitian) (C : Matrix ι ι ℝ) (hC : C.PosSemidef),
+  1 ≤ m →
+    ∀ {θ : ℝ},
+      0 < θ →
+        ∃ x ∈ MatrixSpencer.DyadicOwnerSDP.feasible m a A hA C hC,
+          MatrixSpencer.DyadicOwnerSDP.objective m a H θ x = MatrixSpencer.dyadicOwnerPotential H A C m θ ∧
+            ∀ y ∈ MatrixSpencer.DyadicOwnerSDP.feasible m a A hA C hC,
+              MatrixSpencer.DyadicOwnerSDP.objective m a H θ y ≤ MatrixSpencer.DyadicOwnerSDP.objective m a H θ x :=
+fun {n} {ι} [Fintype n] [LinearOrder n] [Fintype ι] [DecidableEq ι] m a H A hA C hC hm {θ} hθ =>
+  Eq.mpr
+    (id
+      (congrArg
+        (fun _a =>
+          ∃ x ∈ _a,
+            MatrixSpencer.DyadicOwnerSDP.objective m a H θ x = MatrixSpencer.dyadicOwnerPotential H A C m θ ∧
+              ∀ y ∈ _a,
+                MatrixSpencer.DyadicOwnerSDP.objective m a H θ y ≤ MatrixSpencer.DyadicOwnerSDP.objective m a H θ x)
+        (MatrixSpencer.DyadicOwnerSDP.feasible_eq m a A hA C hC)))
+    (MatrixSpencer.DyadicSDPAffineObjective.owner_exists_maximizer m a H A hA hC (MatrixSpencer.DyadicOwnerSDP.center a)
+      (MatrixSpencer.DyadicOwnerSDP.center_trace a) hm hθ)
+theorem MatrixSpencer.DyadicOwnerSDP.rectangular_exists_maximizer : ∀ {N D : ℕ},
+  1 ≤ N →
+    N ≤ D →
+      ∀ (a : Fin (2 * D)) (H : Matrix (Fin (2 * D)) (Fin (2 * D)) ℂ) (A : Fin N → Matrix (Fin (2 * D)) (Fin (2 * D)) ℂ)
+        (hA : ∀ (i : Fin N), (A i).IsHermitian) (C : Matrix (Fin N) (Fin N) ℝ) (hC : C.PosSemidef),
+        have m := MatrixSpencer.RectangularTunedParameters.depth N D;
+        have θ := MatrixSpencer.RectangularTunedParameters.weight N D;
+        ∃ x ∈ MatrixSpencer.DyadicOwnerSDP.feasible m a A hA C hC,
+          MatrixSpencer.DyadicOwnerSDP.objective m a H θ x = MatrixSpencer.dyadicOwnerPotential H A C m θ ∧
+            ∀ y ∈ MatrixSpencer.DyadicOwnerSDP.feasible m a A hA C hC,
+              MatrixSpencer.DyadicOwnerSDP.objective m a H θ y ≤ MatrixSpencer.DyadicOwnerSDP.objective m a H θ x :=
+fun {N D} hN hND a H A hA C hC =>
+  MatrixSpencer.DyadicOwnerSDP.exists_maximizer (MatrixSpencer.RectangularTunedParameters.depth N D) a H A hA C hC
+    (MatrixSpencer.RectangularTunedParameters.depth_positive N D)
+    (MatrixSpencer.RectangularTunedParameters.weight_positive hN hND)
+theorem MatrixSpencer.DyadicOwnerSDP.rectangular_size_bounds : ∀ {N D : ℕ},
+  1 ≤ N →
+    1 ≤ D →
+      ∀ (a : Fin (2 * D)),
+        have m := MatrixSpencer.RectangularTunedParameters.depth N D;
+        MatrixSpencer.DyadicSDPCoordinates.dimension m a ≤ 4 * (2 * D + 5) * D ^ 2 ∧
+          Fintype.card (MatrixSpencer.DyadicSDPAffineData.Constraint m) ≤ 4 * D + 5 ∧
+            MatrixSpencer.DyadicSDPAffineData.matrixSize (Fin (2 * D)) = 8 * D ∧
+              Fintype.card (MatrixSpencer.DyadicSDPAffineData.Constraint m) *
+                    (MatrixSpencer.DyadicSDPCoordinates.dimension m a + 1) *
+                  MatrixSpencer.DyadicSDPAffineData.matrixSize (Fin (2 * D)) ^ 2 ≤
+                256 * (4 * D + 5) * (2 * D + 5) * D ^ 4 :=
+fun {N D} hN hD a =>
+  id
+    (have h := MatrixSpencer.DyadicOwnerSDP.actual_size_bounds (MatrixSpencer.RectangularTunedParameters.depth N D) a;
+    Eq.mpr
+      (id
+        (congrArg
+          (fun _a =>
+            _a ≤ 4 * (2 * D + 5) * D ^ 2 ∧
+              Fintype.card
+                    (MatrixSpencer.DyadicSDPAffineData.Constraint
+                      (MatrixSpencer.RectangularTunedParameters.depth N D)) ≤
+                  4 * D + 5 ∧
+                MatrixSpencer.DyadicSDPAffineData.matrixSize (Fin (2 * D)) = 8 * D ∧
+                  Fintype.card
+                          (MatrixSpencer.DyadicSDPAffineData.Constraint
+                            (MatrixSpencer.RectangularTunedParameters.depth N D)) *
+                        (_a + 1) *
+                      MatrixSpencer.DyadicSDPAffineData.matrixSize (Fin (2 * D)) ^ 2 ≤
+                    256 * (4 * D + 5) * (2 * D + 5) * D ^ 4)
+          (Eq.mp
+              (congr
+                (congrArg
+                  (fun x =>
+                    And
+                      (MatrixSpencer.DyadicSDPCoordinates.dimension (MatrixSpencer.RectangularTunedParameters.depth N D)
+                          a =
+                        MatrixSpencer.DyadicSDPProgramSize.variableCount
+                          (MatrixSpencer.RectangularTunedParameters.depth N D) x))
+                  (Fintype.card_fin (2 * D)))
+                (congrArg
+                  (And
+                    (Fintype.card
+                        (MatrixSpencer.DyadicSDPAffineData.Constraint
+                          (MatrixSpencer.RectangularTunedParameters.depth N D)) =
+                      MatrixSpencer.DyadicSDPProgramSize.constraintCount
+                        (MatrixSpencer.RectangularTunedParameters.depth N D)))
+                  (congr
+                    (congrArg
+                      (fun x =>
+                        And
+                          (MatrixSpencer.DyadicSDPAffineData.matrixSize (Fin (2 * D)) =
+                            MatrixSpencer.DyadicSDPProgramSize.blockOrder x))
+                      (Fintype.card_fin (2 * D)))
+                    (congrArg
+                      (fun x =>
+                        Fintype.card
+                                (MatrixSpencer.DyadicSDPAffineData.Constraint
+                                  (MatrixSpencer.RectangularTunedParameters.depth N D)) *
+                              (MatrixSpencer.DyadicSDPCoordinates.dimension
+                                  (MatrixSpencer.RectangularTunedParameters.depth N D) a +
+                                1) *
+                            MatrixSpencer.DyadicSDPAffineData.matrixSize (Fin (2 * D)) ^ 2 =
+                          16 * (2 * MatrixSpencer.RectangularTunedParameters.depth N D + 1) *
+                              (MatrixSpencer.RectangularTunedParameters.depth N D + 3) *
+                            x ^ 4)
+                      (Fintype.card_fin (2 * D))))))
+              h).left))
+      (Eq.mpr
+        (id
+          (congrArg
+            (fun _a =>
+              MatrixSpencer.DyadicSDPProgramSize.variableCount (MatrixSpencer.RectangularTunedParameters.depth N D)
+                    (2 * D) ≤
+                  4 * (2 * D + 5) * D ^ 2 ∧
+                _a ≤ 4 * D + 5 ∧
+                  MatrixSpencer.DyadicSDPAffineData.matrixSize (Fin (2 * D)) = 8 * D ∧
+                    _a *
+                          (MatrixSpencer.DyadicSDPProgramSize.variableCount
+                              (MatrixSpencer.RectangularTunedParameters.depth N D) (2 * D) +
+                            1) *
+                        MatrixSpencer.DyadicSDPAffineData.matrixSize (Fin (2 * D)) ^ 2 ≤
+                      256 * (4 * D + 5) * (2 * D + 5) * D ^ 4)
+            (Eq.mp
+                  (congr
+                    (congrArg
+                      (fun x =>
+                        And
+                          (MatrixSpencer.DyadicSDPCoordinates.dimension
+                              (MatrixSpencer.RectangularTunedParameters.depth N D) a =
+                            MatrixSpencer.DyadicSDPProgramSize.variableCount
+                              (MatrixSpencer.RectangularTunedParameters.depth N D) x))
+                      (Fintype.card_fin (2 * D)))
+                    (congrArg
+                      (And
+                        (Fintype.card
+                            (MatrixSpencer.DyadicSDPAffineData.Constraint
+                              (MatrixSpencer.RectangularTunedParameters.depth N D)) =
+                          MatrixSpencer.DyadicSDPProgramSize.constraintCount
+                            (MatrixSpencer.RectangularTunedParameters.depth N D)))
+                      (congr
+                        (congrArg
+                          (fun x =>
+                            And
+                              (MatrixSpencer.DyadicSDPAffineData.matrixSize (Fin (2 * D)) =
+                                MatrixSpencer.DyadicSDPProgramSize.blockOrder x))
+                          (Fintype.card_fin (2 * D)))
+                        (congrArg
+                          (fun x =>
+                            Fintype.card
+                                    (MatrixSpencer.DyadicSDPAffineData.Constraint
+                                      (MatrixSpencer.RectangularTunedParameters.depth N D)) *
+                                  (MatrixSpencer.DyadicSDPCoordinates.dimension
+                                      (MatrixSpencer.RectangularTunedParameters.depth N D) a +
+                                    1) *
+                                MatrixSpencer.DyadicSDPAffineData.matrixSize (Fin (2 * D)) ^ 2 =
+                              16 * (2 * MatrixSpencer.RectangularTunedParameters.depth N D + 1) *
+                                  (MatrixSpencer.RectangularTunedParameters.depth N D + 3) *
+                                x ^ 4)
+                          (Fintype.card_fin (2 * D))))))
+                  h).right.left))
+        (Eq.mpr
+          (id
+            (congrArg
+              (fun _a =>
+                MatrixSpencer.DyadicSDPProgramSize.variableCount (MatrixSpencer.RectangularTunedParameters.depth N D)
+                      (2 * D) ≤
+                    4 * (2 * D + 5) * D ^ 2 ∧
+                  MatrixSpencer.DyadicSDPProgramSize.constraintCount
+                        (MatrixSpencer.RectangularTunedParameters.depth N D) ≤
+                      4 * D + 5 ∧
+                    _a = 8 * D ∧
+                      MatrixSpencer.DyadicSDPProgramSize.constraintCount
+                              (MatrixSpencer.RectangularTunedParameters.depth N D) *
+                            (MatrixSpencer.DyadicSDPProgramSize.variableCount
+                                (MatrixSpencer.RectangularTunedParameters.depth N D) (2 * D) +
+                              1) *
+                          _a ^ 2 ≤
+                        256 * (4 * D + 5) * (2 * D + 5) * D ^ 4)
+              (Eq.mp
+                      (congr
+                        (congrArg
+                          (fun x =>
+                            And
+                              (MatrixSpencer.DyadicSDPCoordinates.dimension
+                                  (MatrixSpencer.RectangularTunedParameters.depth N D) a =
+                                MatrixSpencer.DyadicSDPProgramSize.variableCount
+                                  (MatrixSpencer.RectangularTunedParameters.depth N D) x))
+                          (Fintype.card_fin (2 * D)))
+                        (congrArg
+                          (And
+                            (Fintype.card
+                                (MatrixSpencer.DyadicSDPAffineData.Constraint
+                                  (MatrixSpencer.RectangularTunedParameters.depth N D)) =
+                              MatrixSpencer.DyadicSDPProgramSize.constraintCount
+                                (MatrixSpencer.RectangularTunedParameters.depth N D)))
+                          (congr
+                            (congrArg
+                              (fun x =>
+                                And
+                                  (MatrixSpencer.DyadicSDPAffineData.matrixSize (Fin (2 * D)) =
+                                    MatrixSpencer.DyadicSDPProgramSize.blockOrder x))
+                              (Fintype.card_fin (2 * D)))
+                            (congrArg
+                              (fun x =>
+                                Fintype.card
+                                        (MatrixSpencer.DyadicSDPAffineData.Constraint
+                                          (MatrixSpencer.RectangularTunedParameters.depth N D)) *
+                                      (MatrixSpencer.DyadicSDPCoordinates.dimension
+                                          (MatrixSpencer.RectangularTunedParameters.depth N D) a +
+                                        1) *
+                                    MatrixSpencer.DyadicSDPAffineData.matrixSize (Fin (2 * D)) ^ 2 =
+                                  16 * (2 * MatrixSpencer.RectangularTunedParameters.depth N D + 1) *
+                                      (MatrixSpencer.RectangularTunedParameters.depth N D + 3) *
+                                    x ^ 4)
+                              (Fintype.card_fin (2 * D))))))
+                      h).right.right.left))
+          (MatrixSpencer.DyadicSDPProgramSize.rectangular_sizes hN hD))))
+'MatrixSpencer.DyadicSDPTracePower.Chain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPTracePower.power' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPTracePower.canonical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPTracePower.canonical_last' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPTracePower.power_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPTracePower.power_posSemidef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPTracePower.canonical_chain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPTracePower.chain_trace_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicOwnerSDPIdentity.Feasible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicOwnerSDPIdentity.value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicOwnerSDPIdentity.objective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicOwnerSDPIdentity.feasible_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicOwnerSDPIdentity.coefficient_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicOwnerSDPIdentity.feasible_value_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicOwnerSDPIdentity.fixed_density_attainment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MatrixSpencer.DyadicOwnerSDPIdentity.feasible_value_le_densityPotential' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MatrixSpencer.DyadicOwnerSDPIdentity.kraus_SDP_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicOwnerSDPIdentity.values' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicOwnerSDPIdentity.kraus_isGreatest' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicOwnerSDPIdentity.kraus_sSup_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicOwnerSDPIdentity.covariance_feasible_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MatrixSpencer.DyadicOwnerSDPIdentity.feasible_value_le_ownerPotential' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MatrixSpencer.DyadicOwnerSDPIdentity.owner_SDP_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicOwnerSDPIdentity.owner_isGreatest' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicOwnerSDPIdentity.owner_sSup_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPCoordinates.Index' does not depend on any axioms
+'MatrixSpencer.DyadicSDPCoordinates.densityLinear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPCoordinates.auxiliaryLinear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPCoordinates.fidelityLinear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPCoordinates.density' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPCoordinates.chain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPCoordinates.chainLinear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPCoordinates.chain_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPCoordinates.chain_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPCoordinates.chain_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPCoordinates.chain_hermitian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPCoordinates.chainLinear_hermitian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPCoordinates.encode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPCoordinates.density_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPCoordinates.density_encode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPCoordinates.auxiliary_encode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPCoordinates.fidelity_encode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPCoordinates.dimension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPCoordinates.Space' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPCoordinates.entries' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPCoordinates.coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPCoordinates.entries_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPCoordinates.unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPCoordinates.sum_units' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPCoordinates.dimension_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineData.Constraint' does not depend on any axioms
+'MatrixSpencer.DyadicSDPAffineData.RealIndex' does not depend on any axioms
+'MatrixSpencer.DyadicSDPAffineData.matrixSize' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineData.block' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineData.source_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineData.source_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineData.source_hermitian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineData.block_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineData.block_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineData.block_hermitian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineData.complexLinear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineData.realLinear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineData.finiteLinear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineData.constant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineData.data' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineData.matrixAt_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineData.matrixAt_physical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineData.target' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineData.convex_target' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineData.target_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineData.constraint_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineData.matrixSize_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineObjective.valueLinear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineObjective.coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineObjective.offset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineObjective.objective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineObjective.coefficient_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineObjective.value_eq_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineObjective.target' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineObjective.feasible_onto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineObjective.values' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineObjective.values_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineObjective.owner_exists_maximizer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MatrixSpencer.DyadicSDPAffineObjective.owner_isGreatest' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPAffineObjective.owner_sSup_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPProgramSize.variableCount' depends on axioms: [propext]
+'MatrixSpencer.DyadicSDPProgramSize.constraintCount' does not depend on any axioms
+'MatrixSpencer.DyadicSDPProgramSize.blockOrder' does not depend on any axioms
+'MatrixSpencer.DyadicSDPProgramSize.denseCoefficients' depends on axioms: [propext]
+'MatrixSpencer.DyadicSDPProgramSize.variableCount_add_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPProgramSize.denseCoefficients_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPProgramSize.rectangular_depth_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicSDPProgramSize.rectangular_variableCount_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MatrixSpencer.DyadicSDPProgramSize.rectangular_constraintCount_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MatrixSpencer.DyadicSDPProgramSize.rectangular_blockOrder' depends on axioms: [propext]
+'MatrixSpencer.DyadicSDPProgramSize.rectangular_denseCoefficients_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MatrixSpencer.DyadicSDPProgramSize.rectangular_sizes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicOwnerSDP.center' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicOwnerSDP.center_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicOwnerSDP.feasible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicOwnerSDP.objective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicOwnerSDP.feasible_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicOwnerSDP.convex_feasible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicOwnerSDP.exists_maximizer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicOwnerSDP.sSup_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicOwnerSDP.actual_size_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicOwnerSDP.rectangular_size_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixSpencer.DyadicOwnerSDP.rectangular_exists_maximizer' depends on axioms: [propext, Classical.choice, Quot.sound]
